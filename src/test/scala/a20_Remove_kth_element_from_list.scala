@@ -10,7 +10,6 @@ import scala.annotation.tailrec
 object a20_Remove_kth_element_from_list extends Properties("Remove kth element from list") {
 
   implicit val symbolEqual = Equal.equal[Symbol]({case (a1, a2) => a1 == a2 })
-
   property("") = {
     val expected: (IList[Symbol], Option[Symbol]) = (IList('a, 'c, 'd), Some('b))
     expected === removeAt(1, IList('a, 'b, 'c, 'd))
