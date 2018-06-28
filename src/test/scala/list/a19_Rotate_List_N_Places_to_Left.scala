@@ -24,11 +24,11 @@ object a19_Rotate_List_N_Places_to_Left extends Properties("Rotate N places") {
 
   def rotate(leftAmount: Int, l: IList[Symbol]): IList[Symbol] = {
     @tailrec
-    def rotateLeft(n: Int, l: IList[Symbol], rotatedAcc: IList[Symbol]): IList[Symbol] =
-      if (n == 0) l ++ rotatedAcc
+    def rotateLeft(n: Int, l: IList[Symbol], acc: IList[Symbol]): IList[Symbol] =
+      if (n == 0) l |+| acc
       else l match {
         case INil() => INil()
-        case ICons(h, tail) => rotateLeft(n - 1, tail, rotatedAcc :+ h)
+        case ICons(h, tail) => rotateLeft(n - 1, tail, acc :+ h)
       }
 
     @tailrec
