@@ -70,6 +70,5 @@ addCompilerPlugin(
 testOptions in Test += Tests.Argument(TestFrameworks.ScalaCheck,
   "-maxSize", "5",
   "-minSuccessfulTests", "33",
-  "-workers", "1",
-  "-verbosity", "3"
+  "-workers", "1"
 )
