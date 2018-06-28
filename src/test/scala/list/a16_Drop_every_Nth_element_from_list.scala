@@ -6,7 +6,7 @@ import org.scalacheck._
 import scalaz._
 import Scalaz._
 
-object a16_Drop_every_Nth_element_from_list extends Properties("duplicate elements in list N times") {
+object a16_Drop_every_Nth_element_from_list extends Properties("Drop every Nth element from list") {
 
   property("") = {
     val expected = IList('a, 'b, 'd, 'e, 'g, 'h, 'j, 'k)
