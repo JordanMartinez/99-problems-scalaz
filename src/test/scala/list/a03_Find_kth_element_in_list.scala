@@ -19,10 +19,8 @@ object a03_Find_kth_element_in_list extends Properties("Kth Element in List") {
 
   @tailrec
   def penultimate[A](l: IList[A]): Option[A] = l match {
-    case INil() => None
-    case ICons(h@_, INil()) => None
     case ICons(h, ICons(_, INil())) => Some(h)
     case ICons(h@_, tail) => penultimate(tail)
-
+    case _ => None
   }
 }
