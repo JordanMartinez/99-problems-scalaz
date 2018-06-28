@@ -31,18 +31,16 @@ object a19_Rotate_List_N_Places_to_Left extends Properties("Extract slice from l
         case ICons(h, tail) => rotateLeft(n - 1, tail, rotatedAcc :+ h)
       }
 
-    def rotateRight(n: Int, l: IList[Symbol]): IList[Symbol] = {
-      val (_, front, back) = l.foldRight((n, IList.empty[Symbol], IList.empty[Symbol]))((next, acc) => {
-        if (acc._1 > 0) {
-          (acc._1 - 1, acc._2, ICons(next, acc._3))
-        } else {
-          (acc._1, next +: acc._2, acc._3)
-        }
-      })
-      back |+| front
+    @tailrec
+    def rotateRight[A](n: Int, tail: IList[A], heads: IList[A]): IList[A] = {
+      tail match {
+        case INil() => INil()
+        case ICons(_, _) if n == 0 => tail |+| heads.reverse
+        case ICons(h, t) => rotateRight(n - 1, t, h +: heads)
+      }
     }
 
     if (leftAmount > 0) rotateLeft(leftAmount, l, INil())
-    else rotateRight(-leftAmount, l)
+    else rotateRight(leftAmount + l.length, l, INil())
   }
 }
