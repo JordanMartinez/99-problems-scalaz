@@ -4,7 +4,7 @@ import org.scalacheck._
 
 object a05_Reverse_list extends Properties("reverse list") {
 
-  property("last is last") = {
+  property("") = {
     val l = IList(1, 1, 2, 3, 5, 8)
     l.reverse === reverse(l)
   }

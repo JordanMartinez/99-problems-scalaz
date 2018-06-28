@@ -10,7 +10,7 @@ import scala.annotation.tailrec
 
 object a02_penultimate_element_in_list extends Properties("Penultimate Element in List") {
 
-  property("last is last") = {
+  property("") = {
     val l = IList(1, 1, 2, 3, 5, 8)
     (Some(2) : Option[Int]) === nth(2, l)
   }

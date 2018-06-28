@@ -10,7 +10,7 @@ import scala.annotation.tailrec
 
 object a03_Find_kth_element_in_list extends Properties("Kth Element in List") {
 
-  property("last is last") = {
+  property("") = {
     val l = IList(1, 1, 2, 3, 5, 8)
     (Some(5): Option[Int]) === penultimate(l)
   }

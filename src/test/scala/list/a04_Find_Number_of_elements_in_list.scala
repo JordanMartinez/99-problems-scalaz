@@ -5,7 +5,7 @@ import scalaz._
 
 object a04_Find_Number_of_elements_in_list extends Properties("size of list") {
 
-  property("last is last") = {
+  property("") = {
     val l = IList(1, 1, 2, 3, 5, 8)
     6 === length(l)
   }
