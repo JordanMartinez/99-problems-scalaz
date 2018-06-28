@@ -18,20 +18,20 @@ object a18_Extract_slice_from_list extends Properties("Extract slice from list")
 
   def slice(fromInclusive: Int, toExclusive: Int, l: IList[Symbol]): IList[Symbol] = {
     @tailrec
-    def findEnd(n: Int, l: IList[Symbol], acc: IList[Symbol]): IList[Symbol] =
+    def take(n: Int, l: IList[Symbol], acc: IList[Symbol]): IList[Symbol] =
       if (n == 0) acc
       else l match {
         case INil() => INil()
-        case ICons(h, tail) => findEnd(n - 1, tail, acc :+ h)
+        case ICons(h, tail) => take(n - 1, tail, acc :+ h)
       }
 
     @tailrec
-    def findStart(n: Int, list: IList[Symbol]): IList[Symbol] =
-      if (n == 0) findEnd(toExclusive - fromInclusive, list, INil())
+    def drop(n: Int, list: IList[Symbol]): IList[Symbol] =
+      if (n == 0) list
       else list match {
         case INil() => INil()
-        case ICons(_, tail) => findStart(n - 1, tail)
+        case ICons(_, tail) => drop(n - 1, tail)
     }
-    findStart(fromInclusive, l)
+    take(toExclusive - fromInclusive, drop(fromInclusive, l), INil())
   }
 }
