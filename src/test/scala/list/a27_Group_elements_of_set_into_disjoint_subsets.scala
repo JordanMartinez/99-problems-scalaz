@@ -14,15 +14,17 @@ object a27_Group_elements_of_set_into_disjoint_subsets extends Properties(
 
   property("") = {
     val sizeList = IList(1, 3, 2)
+    val sizeListLength = sizeList.length
     val originalList = IList("Aldo", "Beat", "Carla", "David", "Evi", "Flip", "Gary", "Hugo", "Ida")
     val result = group(sizeList, originalList)
+    val resultLength = result.length
 
     // print results using hack
     result.map(group => java.lang.System.out.println(s"One group: $group"))
 
-    result.length === originalList.length
-    val expectedLength = sizeList.length
-    result.all(group => group.length === expectedLength)
+    resultLength === originalList.length
+    val expectedGroupLength = if (sizeList.suml === resultLength) sizeListLength else sizeListLength + 1
+    result.all(group => group.length === expectedGroupLength)
   }
 
   def group[A](sizes: IList[Int], l: IList[A]): IList[IList[IList[A]]] = {
