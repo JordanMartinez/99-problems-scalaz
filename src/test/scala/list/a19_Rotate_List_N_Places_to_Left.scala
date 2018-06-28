@@ -8,7 +8,7 @@ import scalaz._
 
 import scala.annotation.tailrec
 
-object a19_Rotate_List_N_Places_to_Left extends Properties("Extract slice from list") {
+object a19_Rotate_List_N_Places_to_Left extends Properties("Rotate N places") {
 
   implicit val symbolEqual = Equal.equal[Symbol]({case (a1, a2) => a1 == a2 })
 
