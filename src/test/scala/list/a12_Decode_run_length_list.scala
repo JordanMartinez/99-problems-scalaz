@@ -1,3 +1,5 @@
+package list
+
 import scala.Symbol
 import scala.Int
 import org.scalacheck._

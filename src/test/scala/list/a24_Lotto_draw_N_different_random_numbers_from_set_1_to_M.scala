@@ -1,3 +1,5 @@
+package list
+
 import scala.{Int, Option, Some, None, sys}
 import org.scalacheck._
 import scalaz._

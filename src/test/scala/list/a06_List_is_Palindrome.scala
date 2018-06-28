@@ -1,3 +1,5 @@
+package list
+
 import scala.Int
 import scala.Boolean
 import org.scalacheck._

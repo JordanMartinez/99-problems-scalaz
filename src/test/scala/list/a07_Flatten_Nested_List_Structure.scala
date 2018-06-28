@@ -1,3 +1,5 @@
+package list
+
 import scala.Any
 import org.scalacheck._
 import scalaz.Scalaz._

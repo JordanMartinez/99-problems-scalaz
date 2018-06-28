@@ -1,3 +1,5 @@
+package list
+
 import org.scalacheck.Properties
 
 // Skipped because I didn't understand how "direct method" would be different from what I was already doing...
